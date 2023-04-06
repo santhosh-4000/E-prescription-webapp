@@ -183,4 +183,17 @@ html, body {
     display:block;
     padding-bottom:5px;
     }
+
+    .delete-item {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+      }
+    
+    button.delete-item {
+        width: 60px;
+        height: 30px;
+    }
+
     }

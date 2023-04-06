@@ -75,36 +75,38 @@
                     </div> 
                 </div>
             </fieldset>
+            
             <br>
             <fieldset>
                 <legend>Enter medicine</legend>
                 <div>
                     <div class="item">
-                        <label for="">medicine name</label>
-                        <input type="text" name="" id="">
+                        <label for="medicine_name">medicine name</label>
+                        <input type="text" name="medicine_name" id="medicine_name">
                     </div>
                     <div class="item">
-                        <label for="">concentration</label>
-                        <input type="text" name="" id="">
+                        <label for="medicine_conc">concentration</label>
+                        <input type="text" name="medicine_conc" id="medicine_conc">
                     </div>
                     <div class="item">
-                        <label for="">dosage</label>
-                        <input type="text" name="" id="">
+                        <label for="medicine_dosg">dosage</label>
+                        <input type="text" name="medicine_dosg" id="medicine_dosg">
                     </div>
                     <div class="item">
-                        <label for="">quantity</label>
-                        <input type="text" name="" id="">
+                        <label for="medicine_quantity">quantity</label>
+                        <input type="text" name="medicine_quantity" id="medicine_quantity">
                     </div>
                     <div class="item">
-                        <button type="submit" href="/">Add</button>
+                        <button type="button" id="add_medicine">Add</button>
                     </div>
                 </div>
+
                 <h3>Prescription: </h3>
-            
-                <div>
-                
+                <div class="prescription-list">
+                    
                 </div>
             </fieldset>
+            
             <br>
             <div class="item">
                 <label for="">Notes</label>
@@ -115,6 +117,7 @@
             </div>
         </form>
     </div>
-    <script src="js/index.js" charset="utf-8"></script>
+    <script src="js/datetime.js" charset="utf-8"></script>
+    <script src="js/medicine_list.js" charset="utf-8"></script>
 </body>
 </html>
