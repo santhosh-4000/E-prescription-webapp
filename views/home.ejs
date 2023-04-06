@@ -5,23 +5,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-prescription</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel='stylesheet' href='css/style.css'>
 </head>
 <body>
-    <div>
-        <p>date: <span id="current_date"></span></p>
-        <p>time: <span id="current_time"></span></p>
-    </div>
+    <div class="testbox">
+        <form action="/">
+            <div>
+                <p>date: <span id="current_date"></span></p>
+                <p>time: <span id="current_time"></span></p>
+            </div>
+            <br>
+            <fieldset>
+                <legend>Doctor Information</legend>
+                <div>
+                    <p> Doctor id: <%= doctor_id %></p>
+                    <p> Doctor Name: <%= doctor_name %></p>
+                    <p> Hospital Name: <%= hospital_name %></p>
+                </div>
+            </fieldset>
+            <br>
+            <div class="question">
+                <label>Is this patient new?</label>
+                <div class="question-answer">
+                  <div>
+                    <input type="radio" value="none" id="radio_1" name="newPatient"/>
+                    <label for="radio_1" class="radio"><span>Yes</span></label>
+                  </div>
+                  <div>
+                    <input  type="radio" value="none" id="radio_2" name="newPatient"/>
+                    <label for="radio_2" class="radio"><span>No</span></label>
+                  </div>
+                </div>
+              </div>
+            <br>
+            <fieldset>
+                <legend>Patient Information</legend>
+                <div>
+                    <div class="item">
+                        <label for="">Patient id</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    
+                    <div class="item">
+                        <label for="">Patient name</label>
+                        <input type="text" name="" id="">
+                    </div>
     
-    <div>
-        <p> Doctor id: <%= doctor_id %></p>
-        <p> Doctor Name: <%= doctor_name %></p>
-        <p> Hospital Name: <%= hospital_name %></p>
+                    <div class="item">
+                        <label for="">Date of birth:</label>
+                        <input type="date" name="" id="">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+    
+                    <div class="item">
+                        <label for="address">address</label>
+                        <textarea name="address" id="address" cols="30" rows="10"></textarea>
+                    </div>
+                    
+                    <div class="item">
+                        <label for="">symptoms</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    
+                    <div class="item">
+                        <label for="">diagnosis</label>
+                        <input type="text" name="" id="">
+                    </div> 
+                </div>
+            </fieldset>
+            
+            <br>
+            <fieldset>
+                <legend>Enter medicine</legend>
+                <div>
+                    <div class="item">
+                        <label for="medicine_name">medicine name</label>
+                        <input type="text" name="medicine_name" id="medicine_name">
+                    </div>
+                    <div class="item">
+                        <label for="medicine_conc">concentration</label>
+                        <input type="text" name="medicine_conc" id="medicine_conc">
+                    </div>
+                    <div class="item">
+                        <label for="medicine_dosg">dosage</label>
+                        <input type="text" name="medicine_dosg" id="medicine_dosg">
+                    </div>
+                    <div class="item">
+                        <label for="medicine_quantity">quantity</label>
+                        <input type="text" name="medicine_quantity" id="medicine_quantity">
+                    </div>
+                    <div class="item">
+                        <button type="button" id="add_medicine">Add</button>
+                    </div>
+                </div>
+
+                <h3>Prescription: </h3>
+                <div class="prescription-list">
+                    
+                </div>
+            </fieldset>
+            
+            <br>
+            <div class="item">
+                <label for="">Notes</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="btn-block">
+                <button type="submit" href="/">Confirm</button>
+            </div>
+        </form>
     </div>
-    <!-- 
-    new patient?
-    patient details
-    medicine enter
-    prescription -->
-    <script src="js/index.js" charset="utf-8"></script>
+    <script src="js/datetime.js" charset="utf-8"></script>
+    <script src="js/medicine_list.js" charset="utf-8"></script>
 </body>
 </html>
