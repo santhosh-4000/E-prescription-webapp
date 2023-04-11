@@ -54,6 +54,22 @@ addBtn.addEventListener('click', () => {
     medicine_quantity.value = '';
     medicine_name.focus();
   }
-})
+});
 
 
+const list = document.querySelector('.prescription-list');
+
+list.addEventListener('click', event => {
+
+  if (event.target.classList.contains('js-delete-item')) {
+    const itemKey = event.target.parentElement.dataset.key;
+    deleteItem(itemKey);
+  }
+});
+
+function deleteItem(key) {
+  key = Number(key)
+  prescriptionItems = prescriptionItems.filter(item => item.id !== key);
+  const item = document.querySelector(`[data-key='${key}']`);
+  item.remove()
+}
