@@ -196,4 +196,8 @@ html, body {
         height: 30px;
     }
 
+    .item i.fa-microphone {
+      cursor: pointer;
+    }
+
     }
