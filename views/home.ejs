@@ -60,18 +60,15 @@
                     </div>
     
                     <div class="item">
-                        <label for="address">address</label>
-                        <textarea name="address" id="address" cols="30" rows="10"></textarea>
+                        <label for="patient_symptoms">symptoms</label>
+                        <textarea name="patient_symptoms" id="patient_symptoms" cols="30" rows="10"></textarea>
+                        <i class="fas fa-microphone" id="mic_patient_symptoms" onclick="startButton(event)"></i>
                     </div>
                     
                     <div class="item">
-                        <label for="">symptoms</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    
-                    <div class="item">
-                        <label for="">diagnosis</label>
-                        <input type="text" name="" id="">
+                        <label for="patient_diagnosis">diagnosis</label>
+                        <input type="text" name="patient_diagnosis" id="patient_diagnosis">
+                        <i class="fas fa-microphone" id="mic_patient_diagnosis" onclick="startButton(event)"></i>
                     </div> 
                 </div>
             </fieldset>
@@ -83,19 +80,22 @@
                     <div class="item">
                         <label for="medicine_name">medicine name</label>
                         <input type="text" name="medicine_name" id="medicine_name">
-                        <i class="fas fa-microphone" id="mic-medicine-name" onclick="startButton(event)"></i>
+                        <i class="fas fa-microphone" id="mic_medicine_name" onclick="startButton(event)"></i>
                     </div>
                     <div class="item">
                         <label for="medicine_conc">concentration</label>
                         <input type="text" name="medicine_conc" id="medicine_conc">
+                        <i class="fas fa-microphone" id="mic_medicine_conc" onclick="startButton(event)"></i>
                     </div>
                     <div class="item">
                         <label for="medicine_dosg">dosage</label>
                         <input type="text" name="medicine_dosg" id="medicine_dosg">
+                        <i class="fas fa-microphone" id="mic_medicine_dosg" onclick="startButton(event)"></i>
                     </div>
                     <div class="item">
                         <label for="medicine_quantity">quantity</label>
                         <input type="text" name="medicine_quantity" id="medicine_quantity">
+                        <i class="fas fa-microphone" id="mic_medicine_quantity" onclick="startButton(event)"></i>
                     </div>
                     <div class="item">
                         <button type="button" id="add_medicine">Add</button>
@@ -110,8 +110,9 @@
             
             <br>
             <div class="item">
-                <label for="">Notes</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <label for="prescription_notes">Notes</label>
+                <textarea name="prescription_notes" id="prescription_notes" cols="30" rows="10"></textarea>
+                <i class="fas fa-microphone" id="mic_prescription_notes" onclick="startButton(event)"></i>
             </div>
             <div class="btn-block">
                 <button type="submit" href="/">Confirm</button>
