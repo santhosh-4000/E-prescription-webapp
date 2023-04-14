@@ -1,127 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-prescription</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel='stylesheet' href='css/style.css'>
-</head>
-<body>
-    <div class="testbox">
-        <form action="/">
-            <div>
-                <p>date: <span id="current_date"></span></p>
-                <p>time: <span id="current_time"></span></p>
-            </div>
-            <br>
-            <fieldset>
-                <legend>Doctor Information</legend>
-                <div>
-                    <p> Doctor id: <%= doctor_id %></p>
-                    <p> Doctor Name: <%= doctor_name %></p>
-                    <p> Hospital Name: <%= hospital_name %></p>
-                </div>
-            </fieldset>
-            <br>
-            <div class="question">
-                <label>Is this patient new?</label>
-                <div class="question-answer">
-                  <div>
-                    <input type="radio" value="none" id="radio_1" name="newPatient"/>
-                    <label for="radio_1" class="radio"><span>Yes</span></label>
-                  </div>
-                  <div>
-                    <input  type="radio" value="none" id="radio_2" name="newPatient"/>
-                    <label for="radio_2" class="radio"><span>No</span></label>
-                  </div>
-                </div>
-              </div>
-            <br>
-            <fieldset>
-                <legend>Patient Information</legend>
-                <div>
-                    <div class="item">
-                        <label for="">Patient id</label>
-                        <input type="text" name="" id="">
-                    </div>
-                    
-                    <div class="item">
-                        <label for="">Patient name</label>
-                        <input type="text" name="" id="">
-                    </div>
-    
-                    <div class="item">
-                        <label for="">Date of birth:</label>
-                        <input type="date" name="" id="">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-    
-                    <div class="item">
-                        <label for="patient_symptoms">symptoms</label>
-                        <textarea name="patient_symptoms" id="patient_symptoms" cols="30" rows="10"></textarea>
-                        <i class="fas fa-microphone" id="mic_patient_symptoms" onclick="startButton(event)"></i>
-                    </div>
-                    
-                    <div class="item">
-                        <label for="patient_diagnosis">diagnosis</label>
-                        <input type="text" name="patient_diagnosis" id="patient_diagnosis">
-                        <i class="fas fa-microphone" id="mic_patient_diagnosis" onclick="startButton(event)"></i>
-                    </div> 
-                </div>
-            </fieldset>
-            
-            <br>
-            <fieldset>
-                <legend>Enter medicine</legend>
-                <div>
-                    <div class="item">
-                        <label for="medicine_name">medicine name</label>
-                        <input type="text" name="medicine_name" id="medicine_name">
-                        <i class="fas fa-microphone" id="mic_medicine_name"></i>
-                    </div>
-                    <div class="item">
-                        <label for="medicine_conc">concentration</label>
-                        <input type="text" name="medicine_conc" id="medicine_conc">
-                        <i class="fas fa-microphone" id="mic_medicine_conc" onclick="startButton(event)"></i>
-                    </div>
-                    <div class="item">
-                        <label for="medicine_dosg">dosage</label>
-                        <input type="text" name="medicine_dosg" id="medicine_dosg">
-                        <i class="fas fa-microphone" id="mic_medicine_dosg" onclick="startButton(event)"></i>
-                    </div>
-                    <div class="item">
-                        <label for="medicine_quantity">quantity</label>
-                        <input type="text" name="medicine_quantity" id="medicine_quantity">
-                        <i class="fas fa-microphone" id="mic_medicine_quantity" onclick="startButton(event)"></i>
-                    </div>
-                    <div class="item">
-                        <button type="button" id="add_medicine">Add</button>
-                    </div>
-                </div>
+<html>
 
-                <h3>Prescription: </h3>
-                <div class="prescription-list">
-                    
-                </div>
-            </fieldset>
-            
-            <br>
-            <div class="item">
-                <label for="prescription_notes">Notes</label>
-                <textarea name="prescription_notes" id="prescription_notes" cols="30" rows="10"></textarea>
-                <i class="fas fa-microphone" id="mic_prescription_notes" onclick="startButton(event)"></i>
-            </div>
-            <div class="btn-block">
-                <button type="submit" href="/">Confirm</button>
-            </div>
-        </form>
-    </div>
+<head>
+	<title>Login Register App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+	<div class="col-md-4 col-md-offset-4 form-card">
+		<div>
+			<p>E-prescription</p>
+		</div>
+		
+		</div>
+		 <a href="/doctorsignin">Doctor</a> 
+         <a href="/hospitalsignin">Hospital</a>
+		</div>
+	</div>
 </body>
-    <script src="js/datetime.js" charset="utf-8"></script>
-    <script src="js/medicine_list.js" charset="utf-8"></script>
-    <script src="js/voice_recognition.js" charset="utf-8"></script>
-    <script src="js/medname_api_request.js" charset="utf-8"></script>
+
 </html>
