@@ -194,10 +194,19 @@ html, body {
     button.delete-item {
         width: 60px;
         height: 30px;
+        background-color: #178d1b;
     }
 
     .item i.fa-microphone {
       cursor: pointer;
+    }
+
+    table, th, td {
+      border: 1px solid;
+    }
+
+    table {
+      border-collapse: collapse;
     }
 
     }

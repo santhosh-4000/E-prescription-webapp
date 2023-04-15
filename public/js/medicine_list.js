@@ -1,23 +1,23 @@
 let prescriptionItems = [];
 
 function renderPrescription(item) {
-  const list = document.querySelector('.prescription-list');
+  const table = document.querySelector('#table');
 
   const node = document.createElement("tr");
   node.setAttribute('class', `prescription-item`);
   node.setAttribute('data-key', item.id);
 
   node.innerHTML = `
-    <td>|${item.medicine_name}|</td>
-    <td>|${item.medicine_conc}|</td>
-    <td>|${item.medicine_dosg}|</td>
-    <td>|${item.medicine_quantity}|</td>
+    <td>${item.medicine_name}</td>
+    <td>${item.medicine_conc}</td>
+    <td>${item.medicine_dosg}</td>
+    <td>${item.medicine_quantity}</td>
     <button type='button' class="delete-item js-delete-item">
       delete
     </button>
   `;
 
-  list.append(node);
+  table.append(node);
 }
 
 function addPrescriptionItem(medicine_name, medicine_conc, medicine_dosg, medicine_quantity) {
