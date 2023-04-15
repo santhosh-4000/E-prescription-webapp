@@ -209,4 +209,9 @@ html, body {
       border-collapse: collapse;
     }
 
+    #get_patient {
+      width: 100px;
+      height: 30px;
+    }
+
     }

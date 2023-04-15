@@ -28,7 +28,20 @@ router.get('/forgetpass', (req, res, next) => {
 });
 
 router.get('/prescribe', (req, res, next) => {
-	res.render("prescribe.ejs");
+	User.findOne({ unique_id: req.session.userId }).then( (data) => {
+		if (!data) {
+			res.redirect('/');
+		} else {
+			User.findOne({ email: req.query.email }).then((data) => {
+				if(data) {
+					res.render("prescribe.ejs", {doctor_name: data.username, doctor_email: data.email});
+				} else {
+					res.send('doctor email not found');
+				}
+			});
+		}
+	});
+
 });
 
 router.post('/login', (req, res, next) => {
@@ -157,6 +170,16 @@ router.post('/patient', (req, res, next) => {
 			}
 		});
 	
+	});
+
+	router.post('/getpatient', (req, res, next) => {
+		Details.findOne({ phonenumber: req.body.patient_phone }).then( (data) => {
+			if (!data) {
+				res.send({"Success" : "no patient found for given number!"});
+			} else {
+				res.send({"Success": data});
+			}
+		});
 	});
 
 // router.get('/home', (req, res, next) => {
