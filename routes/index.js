@@ -122,7 +122,6 @@ router.post('/patient', (req, res, next) => {
 							gender:patientinfo.gender,
 							dateofbirth: patientinfo.dateofbirth,
 							healthissue: patientinfo.healthissue,
-							symptoms: patientinfo.symptoms,
 						});
 
 						newpatient.save().then((Person) => {

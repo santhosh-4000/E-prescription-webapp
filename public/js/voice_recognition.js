@@ -23,10 +23,12 @@ if ("webkitSpeechRecognition" in window) {
       recognizing = true
     };
     speechRecognition.onerror = () => {
-      
+      speechRecognition.stop();
+      recognizing=false;
     };
     speechRecognition.onend = () => {
-      
+      speechRecognition.stop();
+      recognizing = false;
     };
   
     speechRecognition.onresult = (event) => {

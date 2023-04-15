@@ -9,7 +9,6 @@ detailsSchema = new Schema( {
 	gender:String,
 	dateofbirth: Date,
     healthissue: String,
-    symptoms: String,
 	createdAt: {
 		type: Date,
 		default: Date.now

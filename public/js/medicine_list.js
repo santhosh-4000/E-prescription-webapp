@@ -3,15 +3,15 @@ let prescriptionItems = [];
 function renderPrescription(item) {
   const list = document.querySelector('.prescription-list');
 
-  const node = document.createElement("li");
+  const node = document.createElement("tr");
   node.setAttribute('class', `prescription-item`);
   node.setAttribute('data-key', item.id);
 
   node.innerHTML = `
-    <span>${item.medicine_name}</span>
-    <span>${item.medicine_conc}</span>
-    <span>${item.medicine_dosg}</span>
-    <span>${item.medicine_quantity}</span>
+    <td>|${item.medicine_name}|</td>
+    <td>|${item.medicine_conc}|</td>
+    <td>|${item.medicine_dosg}|</td>
+    <td>|${item.medicine_quantity}|</td>
     <button type='button' class="delete-item js-delete-item">
       delete
     </button>

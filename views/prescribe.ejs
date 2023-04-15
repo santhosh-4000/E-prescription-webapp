@@ -20,31 +20,17 @@
             <fieldset>
                 <legend>Doctor Information</legend>
                 <div>
-                    <!-- <p> Doctor id: </p>
                     <p> Doctor Name: </p>
-                    <p> Hospital Name: </p> -->
+                    <p> Doctor email: </p>
+                    <p> Hospital Name: </p>
                 </div>
             </fieldset>
-            <br>
-            <div class="question">
-                <label>Is this patient new?</label>
-                <div class="question-answer">
-                  <div>
-                    <input type="radio" value="none" id="radio_1" name="newPatient"/>
-                    <label for="radio_1" class="radio"><span>Yes</span></label>
-                  </div>
-                  <div>
-                    <input  type="radio" value="none" id="radio_2" name="newPatient"/>
-                    <label for="radio_2" class="radio"><span>No</span></label>
-                  </div>
-                </div>
-              </div>
             <br>
             <fieldset>
                 <legend>Patient Information</legend>
                 <div>
                     <div class="item">
-                        <label for="">Patient id</label>
+                        <label for="">Patient phone</label>
                         <input type="text" name="" id="">
                     </div>
                     
@@ -104,7 +90,16 @@
 
                 <h3>Prescription: </h3>
                 <div class="prescription-list">
-                    
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>|medicine name|</th>
+                                <th>|concentration|</th>
+                                <th>|dosage|</th>
+                                <th>|quantity|</th>
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
             </fieldset>
             
