@@ -100,6 +100,16 @@
                         <input type="text" name="medicine_quantity" id="medicine_quantity">
                         <i class="fas fa-microphone" id="mic_medicine_quantity" onclick="startButton(event)"></i>
                     </div>
+                    <div class="content" id="allergic_med_popup">
+                        <div onclick="hideAlertPopup()" class="close-btn">
+                            ×
+                        </div>
+                        <h3>Alert</h3>
+                        <p><span id="allergic_medname"></span> is allergic to some patients</p>
+                        <p>please confirm to add medicine</p>
+                        <button type="button" id="allergic_med_add">add</button>
+                        <button type="button" id="allergic_med_cancel">cancel</button>
+                    </div>
                     <div class="item">
                         <button type="button" id="add_medicine">Add</button>
                     </div>
@@ -129,8 +139,8 @@
             <div class="btn-block">
                 <button type="submit">Confirm</button>
             </div>
-            <div class="content">
-                <div onclick="togglePopup()" class="close-btn">
+            <div class="content" id="confirm_prescription">
+                <div onclick="toggleSubmitPopup()" class="close-btn">
                     ×
                 </div>
                 <h3>Popup</h3>

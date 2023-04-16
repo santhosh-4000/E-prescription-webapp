@@ -1,7 +1,7 @@
 window.jsPDF = window.jspdf.jsPDF
 
-function togglePopup() {
-    $(".content").toggle();
+function toggleSubmitPopup() {
+    $("#confirm_prescription").toggle();
 }
 
 $(document).ready(() => {
@@ -24,7 +24,7 @@ $(document).ready(() => {
             data: prescribeData,
             dataType: "json",
             success: (res) => {
-                togglePopup();
+                toggleSubmitPopup();
                 $(window).scrollTop(0);
                 console.log(res.Success);
             },
