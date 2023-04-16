@@ -68,8 +68,8 @@ list.addEventListener('click', event => {
 });
 
 function deleteItem(key) {
-  key = Number(key)
+  key = Number(key);
   prescriptionItems = prescriptionItems.filter(item => item.id !== key);
   const item = document.querySelector(`[data-key='${key}']`);
-  item.remove()
+  item.remove();
 }

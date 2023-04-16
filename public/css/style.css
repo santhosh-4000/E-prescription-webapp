@@ -209,7 +209,7 @@ html, body {
       border-collapse: collapse;
     }
 
-    #get_patient {
+    #get_patient, #get_patient_history {
       width: 100px;
       height: 30px;
     }

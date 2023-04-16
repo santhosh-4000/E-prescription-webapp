@@ -183,6 +183,22 @@ router.post('/patient', (req, res, next) => {
 		});
 	});
 
+	router.get('/getpatienthistory', (req, res, next) => {
+		User.findOne({ unique_id: req.session.userId }).then( (data) => {
+			if (!data) {
+				res.redirect('/');
+			} else {
+				Prescription.find({ patient_phone: req.query.patient_phone }).then( (data) => {
+					if (!data.length) {
+						res.send({"Success" : "patient history doen't exit!"});
+					} else {
+						res.render('patientHistory.ejs', {patientHistory: data});
+					}
+				});
+			}
+		});
+	});
+
 	router.post('/submitprescribe', (req, res, next) => {
 		let prescription = new Prescription(req.body);
 		prescription.save().then((pres) => {

@@ -26,7 +26,13 @@ $(document).ready(() => {
             error: (err) => {
                 console.log(err);
             }
-        })
+        });
+    });
+
+    $("#get_patient_history").click((event) => {
+        event.preventDefault();
+        document.getElementById("check").innerText = "";
+        window.open("/getpatienthistory?patient_phone=" + $('#patient_phone').val());
     });
 
 });

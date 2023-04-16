@@ -7,6 +7,8 @@
     <title>E-prescription</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/jspdf-autotable"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel='stylesheet' href='css/style.css'>
@@ -22,7 +24,7 @@
             <fieldset>
                 <legend>Doctor Information</legend>
                 <div>
-                    <p> Doctor Name: <%= doctor_name  %> </p>
+                    <p> Doctor Name: <span id="doctor_name"><%= doctor_name  %></span> </p>
                     <p> Doctor email: <span id="doctor_email"><%= doctor_email  %></span> </p>
                 </div>
             </fieldset>
@@ -41,6 +43,7 @@
 
                     <div class="item">
                         <button type="button" id="get_patient">get details</button>
+                        <button type="button" id="get_patient_history">get history</button>
                     </div>
                     
                     <div class="item">
@@ -132,7 +135,7 @@
                 </div>
                 <h3>Popup</h3>
                 <p>Prescription saved successfully!</p>
-                <button type="button" id="topdf_bth">convert to pdf</button>
+                <button type="button" id="topdf_btn">convert to pdf</button>
             </div>
         </form>
     </div>
