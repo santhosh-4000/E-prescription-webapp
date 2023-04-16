@@ -5,7 +5,7 @@ $(document).ready(() => {
         const queryData =  {
             'patient_phone': $('#patient_phone').val()
         };
-        document.getElementById("check").innerText = "s";
+        document.getElementById("check").innerText = "";
 
         $.ajax({
             type: 'POST',

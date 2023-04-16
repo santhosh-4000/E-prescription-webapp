@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const Detail = require('../models/details');
+const Prescription = require('../models/prescription.js');
 
 router.get('/', (req, res, next) => {
 	return res.render('home.ejs');
@@ -179,6 +180,13 @@ router.post('/patient', (req, res, next) => {
 			} else {
 				res.send({"Success": data});
 			}
+		});
+	});
+
+	router.post('/submitprescribe', (req, res, next) => {
+		let prescription = new Prescription(req.body);
+		prescription.save().then((pres) => {
+			res.send({"Success":"prescription saved"})
 		});
 	});
 

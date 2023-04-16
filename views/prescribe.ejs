@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="testbox">
-        <form action="/">
+        <form id="form" method="post">
             <div>
                 <p>date: <span id="current_date"></span></p>
                 <p>time: <span id="current_time"></span></p>
@@ -23,7 +23,7 @@
                 <legend>Doctor Information</legend>
                 <div>
                     <p> Doctor Name: <%= doctor_name  %> </p>
-                    <p> Doctor email: <%= doctor_email  %> </p>
+                    <p> Doctor email: <span id="doctor_email"><%= doctor_email  %></span> </p>
                 </div>
             </fieldset>
             <br>
@@ -124,7 +124,15 @@
                 <i class="fas fa-microphone" id="mic_prescription_notes" onclick="startButton(event)"></i>
             </div>
             <div class="btn-block">
-                <button type="submit" href="/">Confirm</button>
+                <button type="submit">Confirm</button>
+            </div>
+            <div class="content">
+                <div onclick="togglePopup()" class="close-btn">
+                    ×
+                </div>
+                <h3>Popup</h3>
+                <p>Prescription saved successfully!</p>
+                <button type="button" id="topdf_bth">convert to pdf</button>
             </div>
         </form>
     </div>
@@ -134,4 +142,5 @@
     <script src="js/voice_recognition.js" charset="utf-8"></script>
     <script src="js/medname_api_request.js" charset="utf-8"></script>
     <script src="js/patient_details.js" charset="utf-8"></script>
+    <script src="js/medicine_prescribe.js" charset="utf-8"></script>
 </html>

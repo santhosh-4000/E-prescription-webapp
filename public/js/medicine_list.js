@@ -1,4 +1,4 @@
-let prescriptionItems = [];
+var prescriptionItems = [];
 
 function renderPrescription(item) {
   const table = document.querySelector('#table');
