@@ -29,8 +29,8 @@ router.get('/forgetpass', (req, res, next) => {
 });
 
 router.get('/prescribe', (req, res, next) => {
-	User.findOne({ unique_id: req.session.userId }).then( (data) => {
-		if (!data) {
+	User.findOne({ unique_id: req.session.userId }).then( (user) => {
+		if (!user) {
 			res.redirect('/');
 		} else {
 			User.findOne({ email: req.query.email }).then((data) => {
@@ -118,17 +118,22 @@ router.get('/profile', (req, res, next) => {
 router.post('/patient', (req, res, next) => {
 	let patientinfo = req.body;
      console.log(patientinfo);
+	User.findOne({ unique_id: req.session.userId }).then( (user) => {
+		if (!user) {
+			res.redirect('/');
+		}
+		else {
 			Detail.findOne({ phonenumber: patientinfo.phonenumber }).then( (data) => {
 				if (!data) {
 					let c;
 					Detail.findOne({}, null,{ sort: { _id: -1 }, limit: 1}).then( (data) => {
-
+	
 						if (data) {
 							c = data.unique_id + 1;
 						} else {
 							c = 1;
 						}
-
+	
 						let newpatient = new Detail({
 							phonenumber: patientinfo.phonenumber,
 							patient_name: patientinfo.patient_name,
@@ -137,18 +142,20 @@ router.post('/patient', (req, res, next) => {
 							dateofbirth: patientinfo.dateofbirth,
 							healthissue: patientinfo.healthissue,
 						});
-
+	
 						newpatient.save().then((Person) => {
 							console.log('Success\n'+ Person);
 						});
-
+	
 					});
 					res.send({ "Success": "You are regestered,You can login now." });
 				} else {
 					res.send({ "Success": "Email is already used." });
 				}
-
+	
 			});
+		}
+	});	
 		} 
 	);
 
@@ -174,11 +181,18 @@ router.post('/patient', (req, res, next) => {
 	});
 
 	router.post('/getpatient', (req, res, next) => {
-		Details.findOne({ phonenumber: req.body.patient_phone }).then( (data) => {
-			if (!data) {
-				res.send({"Success" : "no patient found for given number!"});
-			} else {
-				res.send({"Success": data});
+		User.findOne({ unique_id: req.session.userId }).then( (user) => {
+			if (!user) {
+				res.redirect('/');
+			}
+			else {
+				Details.findOne({ phonenumber: req.body.patient_phone }).then( (data) => {
+					if (!data) {
+						res.send({"Success" : "no patient found for given number!"});
+					} else {
+						res.send({"Success": data});
+					}
+				});
 			}
 		});
 	});
@@ -188,11 +202,11 @@ router.post('/patient', (req, res, next) => {
 			if (!data) {
 				res.redirect('/');
 			} else {
-				Prescription.find({ patient_phone: req.query.patient_phone }).then( (data) => {
-					if (!data.length) {
+				Prescription.find({ patient_phone: req.query.patient_phone }).then( (patientdata) => {
+					if (!patientdata.length) {
 						res.send({"Success" : "patient history doen't exit!"});
 					} else {
-						res.render('patientHistory.ejs', {patientHistory: data});
+						res.render('patientHistory.ejs', {patientHistory: patientdata});
 					}
 				});
 			}
@@ -200,9 +214,16 @@ router.post('/patient', (req, res, next) => {
 	});
 
 	router.post('/submitprescribe', (req, res, next) => {
-		let prescription = new Prescription(req.body);
-		prescription.save().then((pres) => {
-			res.send({"Success":"prescription saved"})
+		User.findOne({ unique_id: req.session.userId }).then( (user) => {
+			if (!user) {
+				res.redirect('/');
+			}
+			else {
+				let prescription = new Prescription(req.body);
+				prescription.save().then((pres) => {
+					res.send({"Success":"prescription saved"})
+				});
+			}
 		});
 	});
 

@@ -23,7 +23,7 @@ db.once('open', () => {
 });
 
 app.use(session({
-  secret: 'work hard',
+  secret: 'anything',
   resave: true,
   saveUninitialized: false,
   store:  MongoStore.create({

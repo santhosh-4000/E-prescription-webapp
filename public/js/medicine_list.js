@@ -67,7 +67,7 @@ cancelAllergicMed.addEventListener('click', () => {
   const medicine_name = document.querySelector('#medicine_name');
   const medicine_conc = document.querySelector('#medicine_conc');
   const medicine_dosg = document.querySelector('#medicine_dosg');
-  const medicine_quantity = document.querySelector('#medicine_quantity');
+  const medicine_quantity = document.querySelector('#medicine_quantity'); 
 
   medicine_name.value = '';
   medicine_conc.value = '';
