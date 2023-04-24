@@ -1,5 +1,5 @@
 async function getMedName(audio_base64) {
-	const response = await fetch("https://santhosh-4000-medicine-name-asr-prototype.hf.space/run/predict", {
+	const response = await fetch("https://santhosh-4000-medicine-asr-prototype.hf.space/run/predict", {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({
